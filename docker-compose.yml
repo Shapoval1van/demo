@@ -1,0 +1,33 @@
+version: '3.1'
+
+services:
+  springboot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+        - image:/image
+    container_name: springboot
+    ports:
+      - 8080:8080
+    working_dir: /opt/app
+    depends_on:
+      - mongodb
+
+  mongodb:
+    image: mongo
+    restart: always
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_DATABASE=demo
+    volumes:
+      - mongodb:/data/db
+      - mongoconfig:/data/configdb
+
+volumes:
+  image:
+  mongodb:
+  mongoconfig:
