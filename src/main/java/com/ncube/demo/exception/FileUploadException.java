@@ -1,4 +1,4 @@
 package com.ncube.demo.exception;
 
-public class FileUploadException extends Exceptionu {
+public class FileUploadException extends Exception {
 }

@@ -100,7 +100,6 @@ public class MemberController {
 
     @Secured("ROLE_ADMIN")
     @DeleteMapping(value = "/members/{id}",
-            consumes = {APPLICATION_XML_VALUE, APPLICATION_JSON_VALUE},
             produces = {APPLICATION_XML_VALUE, APPLICATION_JSON_VALUE})
     public void delete(@PathVariable("id") String id) throws ResourceNotFoundException {
         memberService.delete(id);

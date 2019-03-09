@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
@@ -98,7 +97,5 @@ public class MemberService {
         return fileUrl;
     }
 
-    public File download(String fileName) {
-        return fileRepository.downloadFile(fileName);
-    }
+
 }
